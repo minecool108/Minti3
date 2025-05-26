@@ -1,0 +1,50 @@
+# Основные настройки
+set $mod Mod4
+font pango:Fira Code 10
+floating_modifier $mod
+
+# минт хуйня полная
+exec_always gsettings set org.cinnamon.desktop.interface gtk-theme 'Mint-Y-Dark'
+exec_always gsettings set org.cinnamon.desktop.interface icon-theme 'Mint-Y'
+exec_always gsettings set org.cinnamon.desktop.wm.preferences theme 'Mint-Y-Dark'
+
+# хуета полная
+client.focused          #84A7C1 #2D2D2D #FFFFFF #84A7C1 #84A7C1
+client.focused_inactive #666666 #2D2D2D #CCCCCC #666666 #666666
+
+# хуета какая та
+for_window [class=".*"] border pixel 2
+default_border pixel 2
+default_floating_border pixel 2
+gaps inner 8
+gaps outer 2
+smart_gaps on
+
+# Рабы
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: 󰈙"
+set $ws4 "4: 󰙯"
+set $ws5 "5: 󰝚"
+
+# хоткейс нах
+bindsym $mod+Return exec gnome-terminal
+bindsym $mod+e exec nemo
+bindsym $mod+d exec rofi -show drun
+bindsym $mod+b exec firefox
+bindsym $mod+q kill
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Print exec flameshot gui
+
+# тоже хуета
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# полезная хуета
+exec_always --no-startup-id feh --bg-fill /usr/share/backgrounds/linuxmint/*
+exec_always --no-startup-id picom -b
+exec --no-startup-id nm-applet --indicator
+exec --no-startup-id blueman-applet
+exec --no-startup-id xfce4-power-manager
