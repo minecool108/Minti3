@@ -78,4 +78,4 @@ exec_always --no-startup-id "if ! pgrep picom; then picom -b --experimental-back
 exec --no-startup-id nm-applet --indicator 
 exec --no-startup-id blueman-applet 
 exec --no-startup-id xfce4-power-manager
-exec_always --no-startup-id "if ! pgrep polybar; then polybar; fi"
+exec_always --no-startup-id polybar
