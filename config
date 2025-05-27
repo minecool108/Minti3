@@ -17,20 +17,20 @@ for_window [class=".*"] border pixel 2
 default_border pixel 2
 default_floating_border pixel 2
 gaps inner 8
-gaps outer 4  ; Увеличены внешние отступы
+gaps outer 4 px
 smart_gaps on
 
 # Рабы
-set $ws1 "1: "
-set $ws2 "2: "
-set $ws3 "3: 󰈙"
-set $ws4 "4: 󰙯"
-set $ws5 "5: 󰝚"
-set $ws6 "6: 󰭹"
-set $ws7 "7: "
-set $ws8 "8: "
-set $ws9 "9: "
-set $ws10 "10: "
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 # хз1
 bindsym $mod+1 workspace $ws1
@@ -58,8 +58,8 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # хоткейс нах
 bindsym $mod+Return exec --no-startup-id kitty
-bindsym $mod+e exec nemo --no-desktop
-bindsym $mod+d exec rofi -show drun -theme ~/.config/rofi/launcher.rasi
+bindsym $mod+e exec nautilus
+bindsym $mod+d exec ulauncher
 bindsym $mod+b exec firefox
 bindsym $mod+q kill
 bindsym $mod+f fullscreen toggle
