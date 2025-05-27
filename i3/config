@@ -1,5 +1,5 @@
 # Основные настройки
-set $mod Control
+set $mod Mod4
 font pango:Fira Code 10
 floating_modifier $mod
 
