@@ -17,7 +17,7 @@ for_window [class=".*"] border pixel 2
 default_border pixel 2
 default_floating_border pixel 2
 gaps inner 8
-gaps outer 2
+gaps outer 4  ; Увеличены внешние отступы
 smart_gaps on
 
 # Рабы
@@ -26,17 +26,45 @@ set $ws2 "2: "
 set $ws3 "3: 󰈙"
 set $ws4 "4: 󰙯"
 set $ws5 "5: 󰝚"
+set $ws6 "6: 󰭹"
+set $ws7 "7: "
+set $ws8 "8: "
+set $ws9 "9: "
+set $ws10 "10: "
+
+# хз1
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+#типа чтото
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 # хоткейс нах
-bindsym $mod+Return exec kitty
-bindsym $mod+e exec nemo
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+Return exec --no-startup-id kitty
+bindsym $mod+e exec nemo --no-desktop
+bindsym $mod+d exec rofi -show drun -theme ~/.config/rofi/launcher.rasi
 bindsym $mod+b exec firefox
 bindsym $mod+q kill
 bindsym $mod+f fullscreen toggle
-bindsym $mod+Print exec flameshot gui
+bindsym $mod+Print exec flameshot gui -p ~/Pictures/Screenshots
 bindsym $mod+space floating toggle
-
 
 # тоже хуета
 bindsym $mod+h focus left
@@ -45,9 +73,9 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # полезная хуета
-exec_always --no-startup-id feh --bg-fill /usr/share/backgrounds/linuxmint/*
-exec_always --no-startup-id picom -b
+exec_always --no-startup-id "if ! pgrep feh; then feh --bg-fill /usr/share/backgrounds/linuxmint/*; fi"
+exec_always --no-startup-id "if ! pgrep picom; then picom -b --experimental-backends; fi"
 exec --no-startup-id nm-applet --indicator
 exec --no-startup-id blueman-applet
 exec --no-startup-id xfce4-power-manager
-exec_always --no-startup-id polybar
+exec_always --no-startup-id "if ! pgrep polybar; then polybar; fi"
